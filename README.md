@@ -10,7 +10,8 @@ python auto_adjust_concurrency.py \
     --max_input_len <value> \
     --min_input_len <value> \
     --max_output_len <value> \
-    --min_output_len <value>
+    --min_output_len <value> \
+    --concurrency <value>
 ```
 Example wrapper: ./auto_client.sh
 
