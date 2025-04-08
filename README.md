@@ -23,8 +23,3 @@ Example wrapper: ./auto_client.sh
   Final best result: $log_dir/final/
 - Configurable initial concurrency and adjustment parameters
 
-
-## Output
-All test attempts logged in $'log_dir/attempts/'
-
-Best performing configuration saved in '$log_dir/final/'
