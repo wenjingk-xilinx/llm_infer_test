@@ -95,7 +95,6 @@ def main():
         if not last_decode_time:
             run_benchmark(args.model_path, base_params, attempt_log+"warmup")
         run_benchmark(args.model_path, base_params, attempt_log)
-        #log_file="/mnt/raid0/wenjingk/vllm_deepseekr1/0331/log_docker0325_dsv3_perf2/max_input_len_1000_min_input_len_800_max_output_len_2000_min_output_len_1600_concurrency_20.log"
         decode_time = extract_decode_time(attempt_log)
 
         if decode_time is None:
@@ -140,12 +139,9 @@ def main():
         best_attempt_log = last_attempt_log
 
     shutil.copy(best_attempt_log, f"{args.log_dir}/final/{log_suffix}.log")
-#    with open(f"{args.log_dir}/best_params.txt", "w") as f:
-#        f.write(f"Best Concurrency: {best_concurrency}\n")
-#        f.write(f"Best Decode Time: {best_decode_time} ms\n")
 
     print(f"\n🎯 Final Result: {best_attempt_log}")
-    #print(f"\n🎯 Final Result: Best Concurrency = {best_concurrency}, Decode Time = {best_decode_time} ms")
+    print(f"\n🎯 Final Result: Best Concurrency = {best_concurrency}, Decode Time = {best_decode_time} ms")
 
 if __name__ == "__main__":
     main()
