@@ -12,7 +12,7 @@ def parse_args():
     parser.add_argument("--model_path", type=str, required=True, help="模型路径")
     parser.add_argument("--log_dir", type=str, required=True, help="日志存储目录")
     parser.add_argument("--concurrency", type=int, default=16, help="初始并发度")
-    parser.add_argument("--query_multiplier", type=int, default=10)
+    parser.add_argument("--query_multiplier", type=int, default=10, help="query_num=concurrency*query_multiplier")
     parser.add_argument("--max_retries", type=int, default=10, help="最大调整次数")
     parser.add_argument("--target_decode_time", type=int, default=50, help="目标解码时间 (ms)")
     parser.add_argument("--tolerance", type=int, default=1, help="允许的误差范围 (ms)")
