@@ -15,7 +15,7 @@ MODEL_PATH="/mnt/raid0/wenjingk/DeepSeek-R1"
 LOG_DIR="/mnt/raid0/wenjingk/vllm_deepseekr1/0331/log_docker0331_dsv3_perf_mla1"
 for PARAMS in "${PARAMS_LIST[@]}"; do
 
-python3 ../auto_adjust_concurrency.py \
+python3 auto_adjust_concurrency.py \
     --model_path "$MODEL_PATH" \
     --log_dir "$LOG_DIR" \
     $PARAMS --query_multiplier 10
